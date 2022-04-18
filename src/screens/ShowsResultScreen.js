@@ -17,9 +17,13 @@ const ShowsResultScreen = ({ navigation }) => {
   useEffect(() => {
     getResult(id);
   }, []);
+
+  if (!result) {
+    return null;
+  }
   return (
     <View>
-      <Text>From Detail</Text>
+      <Text>{result.name}</Text>
     </View>
   );
 };
